@@ -1,0 +1,49 @@
+{
+  "name": "ngx-ui-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/bundles/ngx-ui-bootstrap.min.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev webpack-dev-server --config webpack.app.js --host 0.0.0.0 --hot --inline --history-api-fallback --progress",
+    "build": "NODE_ENV=pro webpack --config webpack.app.js --progress -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xunjianxiang/ngx-ui-bootstrap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xunjianxiang/ngx-ui-bootstrap/issues"
+  },
+  "homepage": "https://github.com/xunjianxiang/ngx-ui-bootstrap#readme",
+  "devDependencies": {
+    "@types/node": "^7.0.23",
+    "colors": "^1.1.2",
+    "css-loader": "^0.28.4",
+    "del": "^2.2.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.28.0",
+    "ruby-sass-loader": "^0.4.0",
+    "source-map-loader": "^0.2.1",
+    "ts-loader": "^2.1.0",
+    "typescript": "^2.3.4",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "@angular/common": "^4.1.3",
+    "@angular/compiler": "^4.1.3",
+    "@angular/core": "^4.1.3",
+    "@angular/forms": "^4.1.3",
+    "@angular/http": "^4.1.3",
+    "@angular/platform-browser": "^4.1.3",
+    "@angular/platform-browser-dynamic": "^4.1.3",
+    "@angular/router": "^4.1.3",
+    "@types/angular": "^1.6.17",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.0",
+    "zone.js": "^0.8.11"
+  }
+}
