@@ -26,7 +26,7 @@ module.exports = {
     output: {
         path: dist_base,
         publicPath: '/',
-        filename:  `[name]${ isPro ? '-[chunkhash:8]' : '' }.min.js`
+        filename:  `js/[name]${ isPro ? '-[chunkhash:8]' : '' }.min.js`
     },
     module : {
         rules: [
@@ -46,11 +46,19 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract('css-loader?sourceMap!ruby-sass-loader?sourceMap')
+            },
+            {
+                test: /\.png|\.gif|\.jpg|\.jpeg|\.ico$/,
+                use: 'url-loader?limit=1024&name=image/[name]-[hash:8].[ext]'
+            },
+            {
+                test: /\.eot|\.svg|\.ttf|\.woff|\.woff2$/,
+                use: 'url-loader?limit=1024&name=font/[name]-[hash:8].[ext]'
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin(`[name]${ isPro ? '-[contenthash:8]' : '' }.min.js`),
+        new ExtractTextPlugin(`css/[name]${ isPro ? '-[contenthash:8]' : '' }.min.css`),
         new HtmlWebpackPlugin({
             filename: dist_page,
             template: demo_template,
