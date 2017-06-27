@@ -41,7 +41,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: 'html-loader'
+                use: 'html-loader?-minimize'
             },
             {
                 test: /\.scss$/,
