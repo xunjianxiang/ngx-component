@@ -6,8 +6,8 @@
 		"curly": false,
 		"class-name": true,
 		"semicolon": [
-			true,
-			"always",
+			false,
+			"never",
 			"ignore-interfaces",
 			"ignore-bound-class-methods"
 		],
@@ -78,7 +78,14 @@
 		"no-string-literal": false,
 		"no-shadowed-variable": false,
 		"no-bitwise": false,
-		"no-var-requires": false
+		"no-var-requires": false,
+		"variable-name": [
+			true,
+			"allow-leading-underscore"
+		],
+		"max-line-length": [
+			false
+		]
 	},
 	"enable": true,
 	"extends": "tslint:latest"
