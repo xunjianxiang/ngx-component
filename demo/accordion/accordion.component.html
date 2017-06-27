@@ -1,0 +1,67 @@
+<div class="well-sm">
+    Single Accordion:
+</div>
+<ngx-accordion>
+    <ng-container *ngFor="let accordion of accordions;">
+        <ngx-accordion-item [opened]="true">
+            <ngx-accordion-header>
+                {{ accordion.header }}
+            </ngx-accordion-header>
+            <ngx-accordion-content>
+                {{ accordion.content }}
+            </ngx-accordion-content>
+        </ngx-accordion-item>
+    </ng-container>
+</ngx-accordion>
+
+<div class="well-sm">
+    Single Accordion With Disabled:
+</div>
+<ngx-accordion>
+    <ng-container *ngFor="let accordion of accordions; first as isFirst">
+        <ngx-accordion-item [disabled]="isFirst" [opened]="true">
+            <ngx-accordion-header>
+                {{ accordion.header }}
+            </ngx-accordion-header>
+            <ngx-accordion-content>
+                {{ accordion.content }}
+            </ngx-accordion-content>
+        </ngx-accordion-item>
+    </ng-container>
+</ngx-accordion>
+
+<div class="well-sm">
+    Single Accordion With Icon:
+</div>
+<ngx-accordion>
+    <ngx-accordion-item *ngFor="let accordion of accordions; first as isFirst" #item [disabled]="isFirst" [opened]="true">
+        <ngx-accordion-header>
+            <span>{{ accordion.header }}</span>
+            <a class="btn btn-xs btn-link pull-right">
+                <i class="glyphicon" [class.glyphicon-plus]="!item.opened" [class.glyphicon-minus]="item.opened"></i>
+            </a>
+        </ngx-accordion-header>
+        <ngx-accordion-content>
+            {{ accordion.content }}
+        </ngx-accordion-content>
+    </ngx-accordion-item>
+</ngx-accordion>
+
+<div class="well-sm">
+    Multi Accordion With Icon:
+</div>
+<ngx-accordion multi>
+    <ng-container *ngFor="let accordion of accordions; index as index; first as isFirst">
+        <ngx-accordion-item #item [disabled]="isFirst" [opened]="true">
+            <ngx-accordion-header>
+                <span>{{ accordion.header }}</span>
+                <a class="btn btn-xs btn-link pull-right">
+                    <i class="glyphicon" [class.glyphicon-plus]="!item.opened" [class.glyphicon-minus]="item.opened"></i>
+                </a>
+            </ngx-accordion-header>
+            <ngx-accordion-content>
+                {{ accordion.content }}
+            </ngx-accordion-content>
+        </ngx-accordion-item>
+    </ng-container>
+</ngx-accordion>

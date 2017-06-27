@@ -1,0 +1,6 @@
+<div class="alert alert-{{ type }}" [class.alert-dismissible]="closable">
+    <a *ngIf="closable" class="close" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+    </a>
+    <ng-content></ng-content>
+</div>

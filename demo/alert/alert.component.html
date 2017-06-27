@@ -1,0 +1,11 @@
+<ng-container *ngFor="let item of list">
+    <ngx-alert [type]="item.type" [timeout]="item.timeout" [closable]="item.closable" (dismiss)="close(item)">
+        {{ item.message }}
+    </ngx-alert>
+</ng-container>
+<ng-container *ngIf="!list.length">
+    <div class="well well-sm">
+        There is no alert message!
+        <button class="btn btn-primary btn-link" (click)="reset()">You can reset the alert list！</button>
+    </div>
+</ng-container>
