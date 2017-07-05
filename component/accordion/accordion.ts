@@ -7,7 +7,7 @@ import { NgxAccordionItemComponent } from './accordion.item.component';
 import { NgxAccordionHeaderComponent } from './accordion.header.component';
 import { NgxAccordionContentComponent } from './accordion.content.component';
 
-const NGX_UI_BOOTSTRAP = [
+const NGX_UI_ACCORDION = [
     NgxAccordionComponent,
     NgxAccordionItemComponent,
     NgxAccordionHeaderComponent,
@@ -18,8 +18,8 @@ const NGX_UI_BOOTSTRAP = [
     imports: [
         CommonModule
     ],
-    declarations: NGX_UI_BOOTSTRAP,
-    exports: NGX_UI_BOOTSTRAP
+    declarations: NGX_UI_ACCORDION,
+    exports: NGX_UI_ACCORDION
 })
 
 export class NgxAccordion {}
