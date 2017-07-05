@@ -44,7 +44,7 @@ export class NgxAccordionComponent {
     private setActive (item) {
         // only for single mode
         if (this.multi) return;
-        this.active = item.opened ? item : undefined;
+        this.active = item.collapsed ? undefined : item;
     }
 
     private closeActive () {
@@ -66,8 +66,8 @@ export class NgxAccordionComponent {
         this.items.push(item);
         // only for single
         if (this.multi) return;
-        // only check opened item
-        if (!item.opened) return;
+        // only check not collapsed item
+        if (item.collapsed) return;
         if (this.active) {
             item.collapse(true);
         } else {

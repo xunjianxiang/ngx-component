@@ -19,7 +19,7 @@ function getAlias () {
     selector: 'ngx-accordion-item',
     template: `
         <ng-content select="ngx-accordion-header"></ng-content>
-        <ng-content select="ngx-accordion-content" *ngIf="opened"></ng-content>
+        <ng-content select="ngx-accordion-content" *ngIf="!collapsed"></ng-content>
     `,
     host: {
         'class': `panel panel-default`,
@@ -30,7 +30,7 @@ function getAlias () {
 export class NgxAccordionItemComponent implements OnInit {
 
     private _disabled: boolean;
-    @Input() opened: boolean = false;
+    @Input() collapsed: boolean = false;
     @Input()
     get disabled () {
         return this._disabled;
@@ -38,7 +38,7 @@ export class NgxAccordionItemComponent implements OnInit {
     set disabled (value) {
         this._disabled = attributeParse(value);
         if (!this._disabled) return;
-        this.opened = false;
+        this.collapsed = false;
     }
     @Input() alias: string = getAlias();
 
@@ -53,21 +53,21 @@ export class NgxAccordionItemComponent implements OnInit {
     }
 
     toggle (silent?: boolean) {
-        this.opened ? this.collapse(silent) : this.expand(silent);
+        this.collapsed ? this.expand(silent) : this.collapse(silent);
     }
 
     expand (silent?: boolean) {
-        this.switch(true, silent);
+        this.switch(false, silent);
     }
 
     collapse (silent?: boolean) {
-        this.switch(false, silent);
+        this.switch(true, silent);
     }
 
     switch (status: boolean, silent?: boolean) {
         if (this.disabled) return;
-        if (this.opened === status) return;
-        this.opened = status;
+        if (this.collapsed === status) return;
+        this.collapsed = status;
         if (silent) return;
         this.parent.change(this);
     }
