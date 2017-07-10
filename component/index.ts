@@ -5,10 +5,15 @@ import { NgxAlert } from './alert/alert';
 export { NgxAlert } from './alert/alert';
 
 import { NgxAccordion } from './accordion/accordion';
+export { NgxAccordion } from './accordion/accordion';
+
+import { NgxSwitch } from './switch/switch';
+export { NgxSwitch } from './switch/switch';
 
 const NGX_UI_BOOTSTRAP = [
     NgxAlert,
-    NgxAccordion
+    NgxAccordion,
+    NgxSwitch
 ];
 
 @NgModule({

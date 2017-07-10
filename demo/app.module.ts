@@ -9,11 +9,13 @@ import { NgxUI } from '../component';
 import { AppComponent } from './app.component';
 import { DemoAlertComponent } from './alert/alert.component';
 import { DemoAccordionComponent } from './accordion/accordion.component';
+import { DemoSwitchComponent } from './switch/switch.component';
 
 const routes: Routes = [
     { path: '',   redirectTo: '/alert', pathMatch: 'full'},
     { path: 'alert', component: DemoAlertComponent },
-    { path: 'accordion', component: DemoAccordionComponent }
+    { path: 'accordion', component: DemoAccordionComponent },
+    { path: 'switch', component: DemoSwitchComponent }
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const routes: Routes = [
     declarations: [
         AppComponent,
         DemoAlertComponent,
-        DemoAccordionComponent
+        DemoAccordionComponent,
+        DemoSwitchComponent
     ],
     bootstrap: [
         AppComponent

@@ -1,0 +1,32 @@
+<div class="form-group">
+    <span>Basic</span>
+    <ngx-switch [(value)]="basic_value"></ngx-switch>
+</div>
+<div class="well well-sm">
+    {{ basic_value }}
+</div>
+
+
+<div class="form-group">
+    <span>custome</span>
+    <ngx-switch [(value)]="custome_value" on="1" off="0"></ngx-switch>
+</div>
+<div class="well well-sm">
+    {{ custome_value }}
+</div>
+
+<div class="form-group">
+    <span>Disabled</span>
+    <ngx-switch [(value)]="disabled_value" disabled></ngx-switch>
+</div>
+<div class="well well-sm">
+    {{ disabled_value }}
+</div>
+
+<div class="form-group">
+    <span>hook</span>
+    <ngx-switch [(value)]="hook_value" on="1" off="0" [before]="before" [after]="after"></ngx-switch>
+</div>
+<div class="well well-sm">
+    {{ hook_value }}
+</div>

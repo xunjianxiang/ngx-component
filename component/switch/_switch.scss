@@ -1,0 +1,52 @@
+.ngx-switch {
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    overflow: visible;
+    width: 32px;
+    height: 15px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;
+    transition: 0.3s ease-out background;
+    -webkit-transition: 0.3s ease-out background;
+}
+.ngx-switch:before {
+    content: '';
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: 0.3s ease-out left;
+    -webkit-transition: 0.3s ease-out left;
+}
+
+.ngx-switch.disabled {
+    cursor: not-allowed;
+}
+
+.ngx-switch.on.disabled {
+    opacity: 0.65;
+}
+.ngx-switch.on.disabled:before {
+    background-color: #fff;
+}
+.ngx-switch.on, .ngx-switch.on.disabled{
+    background: rgb(100, 189, 99);
+    border-color: rgb(100, 189, 99);
+}
+.ngx-switch.on:before {
+    left: 17px;
+}
+
+.ngx-switch.disabled, .ngx-switch.disabled:before {
+    background-color: #f3f3f3;
+}
